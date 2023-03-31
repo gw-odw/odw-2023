@@ -2,9 +2,7 @@ name: Spelling check
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: "*"
 
 jobs:
   test:
@@ -15,6 +13,14 @@ jobs:
         python-version: [3.9]
 
     steps:
-    - name: Test with codespell
+    - uses: actions/checkout@v2
+    - name: Install dependencies
       run: |
-        codespell . --ignore-regex "\b[a-zA-Z]{2,3}\b"
+        python -m pip install -U pip
+        python -m pip install -U jupyter codespell
+    - name: Clean all notebooks
+      run: |
+        for file in Tutorials/Day_*/*ipynb; do echo $file; jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
+    - name: Check spelling
+      run: |
+        codespell . --ignore-regex "\b[a-zA-Z]{2,3}\b" -I .dictionary.txt
