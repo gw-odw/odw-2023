@@ -1,17 +1,17 @@
 # Data Challenge 
 
-### GW Open Data Workshop #5
+### GW Open Data Workshop #6
 
-Challenge activity for the Open Data Workshop 2022: https://www.gw-openscience.org/odw/odw2022/
+Challenge activity for the Open Data Workshop 2022: https://www.gw-openscience.org/odw/odw2023/
 
-Data files may be downloaded using these links:
+Data files may be downloaded from [DCC G2300818](https://dcc.ligo.org/LIGO-G2300818/public) using these links:
 
-* [challenge1.gwf](https://www.gw-openscience.org/s/workshop3/challenge/challenge1.gwf)
-* [challenge2.gwf](https://www.gw-openscience.org/s/workshop3/challenge/challenge2.gwf)
-* [challenge3.gwf](https://www.gw-openscience.org/s/workshop3/challenge/challenge3.gwf)
-* [challenge3-2048.gwf](https://www.gw-openscience.org/s/workshop3/challenge/challenge3-2048.gwf)   <-- Downsampled version of Challenge 3 file
+* [challenge1.gwf](https://dcc.ligo.org/public/0187/G2300818/001/challenge1.gwf)
+* [challenge2.gwf](https://dcc.ligo.org/public/0187/G2300818/001/challenge2.gwf)
+* [challenge3.gwf](https://dcc.ligo.org/public/0187/G2300818/001/challenge3.gwf)
+* [challenge3_2048hz.gwf](https://dcc.ligo.org/public/0187/G2300818/001/challenge3_2048hz.gwf)   <-- Downsampled version of Challenge 3 file
 
-Workshop participants may [submit solutions](https://gw-odw.thinkific.com/courses/take/workshop-5/surveys/32204566-submit-your-data-challenge-solution) as individuals or in teams of up to 3 people.  Solutions are due before 23:00 UTC of Day 3+7, Wednesday June 1. 
+Workshop participants may [submit solutions via thinkific](https://gw-odw.thinkific.com) as individuals or in teams of up to 3 people.  Solutions are due before 23:00 UTC of May 24, 2023. 
 
 Challenges are ordered by difficulty. Entries will be rewarded a number of
 points that scales with the difficulty of the challenge. 
