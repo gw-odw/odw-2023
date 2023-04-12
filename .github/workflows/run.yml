@@ -1,0 +1,24 @@
+name: Run the code
+
+on:
+  push:
+    branches: "*"
+
+jobs:
+  day1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        conda env create -f environment.yml
+    - name: Clean all notebooks
+      run: |
+        for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
+    - name: Run all notebooks
+      run: |
+        for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --to notebook --execute $file; done
