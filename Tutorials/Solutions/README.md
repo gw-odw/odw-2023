@@ -1,11 +1,16 @@
-# Solutions
+# ODW-2021 solution repo
 
-This directory contains encrypted versions of the solution files (stored as
-`.ipynb.gpg`). We keep these encrypted before the ODW to encourage users to
-have a go themselves. If you have access the to key, you can unencrypt these
-files by running
+This repository contains the encrypted solutions to the quizzes and challanges proposed at the [ODW6, 2023](https://github.com/gw-odw/odw-2023). To see the solutions, you need to be in possession of the secret key. Once you have this, you can run
+```
+$ gpg -d folder.tar.gz.gpg | tar -xvzf -
+```
+to produce all solutions.
 
+You can add solution in the form of text or mardown file, if they require just a few explanantion sentences or lines of code. Otherwise, feel free to create and upload a Jupyter notebook. Use the same environment of the workshop to create it.
+
+To add a new solution, or edit an existing solution. First, unpack the solutions as above. Then, run
 ```
-$ gpg -o <FILENAME.ipynb> -c <FILENAME.ipynb.gpg>
+$ tar -cvzf - Solutions_Tuto* | gpg -c > solutions.tar.gz.gpg
 ```
-and replacing `FILENAME` with the tutorial you wish to decrypt.
+Then finally git add the `solutions.tar.gz.gpg` and commit in the usual way.
+
