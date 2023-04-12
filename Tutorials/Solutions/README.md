@@ -1,8 +1,8 @@
 # ODW-2021 solution repo
 
-This repository contains the encrypted solutions to the quizzes and challanges proposed at the [ODW6, 2023](https://github.com/gw-odw/odw-2023). To see the solutions, you need to be in possession of the secret key. Once you have this, you can run
+This repository contains the encrypted solutions to the quizzes and challenges proposed at the [ODW6, 2023](https://github.com/gw-odw/odw-2023). To see the solutions, you need to be in possession of the secret key. Once you have this, you can run
 ```
-$ gpg -d folder.tar.gz.gpg | tar -xvzf -
+$ gpg -d solutions.tar.gz.gpg | tar -xvzf -
 ```
 to produce all solutions.
 
