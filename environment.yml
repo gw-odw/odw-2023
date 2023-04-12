@@ -9,6 +9,7 @@ dependencies:
 - h5py=3.6.0
 - ipykernel=6.9.0
 - ipython=8.0.1
+- jupyter=1.0.0
 - jupyter_client=7.1.2
 - jupyter_console=6.4.0
 - jupyter_core=4.9.1
