@@ -18,6 +18,8 @@ jobs:
         conda env create -f environment.yml
     - name: Activate environment
       run: |
+        conda init bash
+        bash
         conda activate igwn-py39-lw
     - name: Clean all notebooks
       run: |
