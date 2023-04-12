@@ -17,6 +17,7 @@ jobs:
       run: |
         conda env create -f environment.yml
     - name: Activate environment
+      run: |
         conda activate igwn-py39-lw
     - name: Clean all notebooks
       run: |
