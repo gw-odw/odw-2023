@@ -21,5 +21,7 @@ jobs:
     - name: Create and activate the environment
       run: |
         $CONDA/bin/conda env update --file environment.yml --name base
-        for file in Tutorials/Day_1/*ipynb; do echo $file; $CONDA/bin/jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
-        for file in Tutorials/Day_1/*ipynb; do echo $file; $CONDA/bin/jupyter nbconvert --to notebook --execute $file; done
+        file=Tuto_1.1_Discovering_Open_Data.ipynb
+        echo $file
+        $CONDA/bin/jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file
+        $CONDA/bin/jupyter nbconvert --to notebook --execute $file
