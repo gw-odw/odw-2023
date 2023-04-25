@@ -21,9 +21,5 @@ jobs:
       run: |
         conda env create -f environment.yml
         conda activate igwn-py39-lw || true
-    - name: Clean all notebooks
-      run: |
         for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
-    - name: Run all notebooks
-      run: |
         for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --to notebook --execute $file; done
