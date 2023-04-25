@@ -19,6 +19,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Create and activate the environment
       run: |
+        source ~/anaconda3/bin/activate
+        which conda
         conda env create -f environment.yml
         conda activate igwn-py39-lw || true
         for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
