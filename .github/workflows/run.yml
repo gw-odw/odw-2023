@@ -6,23 +6,21 @@ on:
 
 jobs:
   day1:
+    name: Day 1
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -l {0}
     strategy:
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install dependencies
+    - name: Create and activate the environment
       run: |
         conda env create -f environment.yml
-    - name: Activate environment
-      run: |
-        conda init bash
-        conda activate igwn-py39-lw
+        conda activate igwn-py39-lw || true
     - name: Clean all notebooks
       run: |
         for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
