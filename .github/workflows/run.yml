@@ -20,6 +20,7 @@ jobs:
     - name: Install requirements
       run: |
         pip install -r requirements.txt
+        pip install pandoc
     - name: Execute and convert
       run: |
         for file in Tutorials/Day_1/*ipynb; do jupyter nbconvert --to pdf $file; done
