@@ -23,11 +23,11 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_1/*ipynb; do jupyter nbconvert --to html $file; done
+        for file in Tutorials/Day_1/*ipynb; do jupyter nbconvert --to html $file --execute; done
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
-        name: HTML
+        name: HTML-Day1
         path: Tutorials/Day_1/*html
 
   Day2:
@@ -48,11 +48,11 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_2/*ipynb; do jupyter nbconvert --to html $file; done
+        for file in Tutorials/Day_2/*ipynb; do jupyter nbconvert --to html $file --execute; done
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
-        name: HTML
+        name: HTML-Day2
         path: Tutorials/Day_2/*html
 
   Day3:
@@ -73,9 +73,9 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_3/*ipynb; do jupyter nbconvert --to html $file; done
+        for file in Tutorials/Day_3/*ipynb; do jupyter nbconvert --to html $file --execute; done
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
-        name: HTML
+        name: HTML-Day3
         path: Tutorials/Day_3/*html
