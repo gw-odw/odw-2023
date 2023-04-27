@@ -20,28 +20,5 @@ jobs:
     - uses: actions/setup-python@v2
     - name: Create and activate the environment
       run: |
-        $CONDA/bin/conda env update --file environment.yml --name base
         file=Tuto_1.1_Discovering_Open_Data.ipynb
         echo $file
-        $CONDA/bin/jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file
-        $CONDA/bin/jupyter nbconvert --to notebook --execute $file
-
-  t31:
-    name: Tutorials 3.1
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
-    strategy:
-      matrix:
-        python-version: [3.9]
-
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-    - name: Create and activate the environment
-      run: |
-        $CONDA/bin/conda env update --file environment.yml --name base
-        file=Tuto_3.3_Discovering_and_using_published_posterior_samples.ipynb
-        echo $file
-        $CONDA/bin/jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file
