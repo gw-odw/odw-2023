@@ -8,7 +8,6 @@ jobs:
   t11:
     name: Tutorials 1.1
     runs-on: ubuntu-latest
-    container: igwn/software
     defaults:
       run:
         shell: bash -l {0}
@@ -20,8 +19,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Create and activate the environment
       run: |
-        $CONDA/bin/conda env update --file environment.yml --name base
+        pip install -r requirements.txt
         file=Tutorials/Day_1/Tuto_1.1_Discovering_Open_Data.ipynb
         echo $file
-        $CONDA/bin/jupyter nbconvert --to python $file
-        $CONDA/bin/python $file
+        jupyter nbconvert --to python $file
+        python $file
