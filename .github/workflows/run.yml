@@ -8,6 +8,7 @@ jobs:
   t11:
     name: Tutorials 1.1
     runs-on: ubuntu-latest
+    container: igwn/software
     defaults:
       run:
         shell: bash -l {0}
