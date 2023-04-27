@@ -22,4 +22,9 @@ jobs:
         pip install -r requirements.txt
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_1/*; do jupyter nbconvert --to python $file; done
+        for file in Tutorials/Day_1/*ipynb; do jupyter nbconvert --to pdf $file; done
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+      with:
+        name: PDF
+        path: Tutorials/Day_1/*pdf
