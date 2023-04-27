@@ -20,6 +20,7 @@ jobs:
     - name: Create and activate the environment
       run: |
         $CONDA/bin/conda env update --file environment.yml --name base
-        file=Tuto_1.1_Discovering_Open_Data.ipynb
+        file=Tutorials/Day_1/Tuto_1.1_Discovering_Open_Data.ipynb
         echo $file
         $CONDA/bin/jupyter nbconvert --to python $file
+        $CONDA/bin/python $file
