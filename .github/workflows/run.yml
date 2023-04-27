@@ -5,8 +5,8 @@ on:
     branches: "*"
 
 jobs:
-  t11:
-    name: Tutorials 1.1
+  Day1:
+    name: Day 1 Tutorials
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -17,10 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Create and activate the environment
+    - name: Install requirements
       run: |
         pip install -r requirements.txt
-        file=Tutorials/Day_1/Tuto_1.1_Discovering_Open_Data.ipynb
-        echo $file
-        jupyter nbconvert --to python $file
-        python $file
+    - name: Execute and convert
+      run: |
+        for file in Tutorials/Day_1/*; do jupyter nbconvert --to python $file; done
