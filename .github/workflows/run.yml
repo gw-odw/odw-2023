@@ -45,4 +45,3 @@ jobs:
         file=Tuto_3.3_Discovering_and_using_published_posterior_samples.ipynb
         echo $file
         $CONDA/bin/jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file
-        $CONDA/bin/jupyter nbconvert --to notebook --execute $file
