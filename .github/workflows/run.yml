@@ -23,12 +23,8 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_1/*ipynb; do jupyter nbconvert --to html $file --execute; done
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v3
-      with:
-        name: HTML-Day1
-        path: Tutorials/Day_1/*html
+        for file in Tutorials/Day_1/*ipynb; do echo file; jupyter nbconvert --to python $file ; done
+        for file in Tutorials/Day_1/*py; do echo $file; python $file; done
 
   Day2:
     name: Day 2 Tutorials
@@ -73,7 +69,8 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_3/*ipynb; do jupyter nbconvert --to html $file --execute; done
+        for file in Tutorials/Day_3/*ipynb; do echo file; jupyter nbconvert --to python $file ; done
+        for file in Tutorials/Day_3/*py; do echo $file; python $file; done
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
