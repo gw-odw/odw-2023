@@ -23,7 +23,7 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_1/*ipynb; do echo file; jupyter nbconvert --to python $file ; done
+        for file in Tutorials/Day_1/*ipynb; do echo file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
         for file in Tutorials/Day_1/*py; do echo $file; python $file; done
 
   Day2:
