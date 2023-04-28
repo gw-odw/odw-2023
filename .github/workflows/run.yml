@@ -20,11 +20,10 @@ jobs:
     - name: Install requirements
       run: |
         pip install -r requirements.txt
-        pip install pandoc
     - name: Convert and execute
       run: |
-        for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
-        for file in Tutorials/Day_1/*py; do echo $file; python $file; done
+        for file in Tutorials/Day_1/*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_1/*py; do echo "Running" $file; python $file; done
 
   Day2:
     name: Day 2 Tutorials
@@ -41,16 +40,10 @@ jobs:
     - name: Install requirements
       run: |
         pip install -r requirements.txt
-        pip install pandoc
     - name: Convert and execute
       run: |
-        for file in Tutorials/Day_2/*ipynb; do echo $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
-        for file in Tutorials/Day_2/*py; do echo $file; python $file; done
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v3
-      with:
-        name: HTML-Day2
-        path: Tutorials/Day_2/*html
+        for file in Tutorials/Day_2/*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_2/*py; do echo "Running" $file; python $file; done
 
   Day3:
     name: Day 3 Tutorials
@@ -67,13 +60,7 @@ jobs:
     - name: Install requirements
       run: |
         pip install -r requirements.txt
-        pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_3/*ipynb; do echo $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
-        for file in Tutorials/Day_3/*py; do echo $file; python $file; done
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v3
-      with:
-        name: HTML-Day3
-        path: Tutorials/Day_3/*html
+        for file in Tutorials/Day_3/*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_3/*py; do echo "Running" $file; python $file; done
