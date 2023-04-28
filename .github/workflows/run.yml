@@ -21,9 +21,9 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pandoc
-    - name: Execute and convert
+    - name: Convert and execute
       run: |
-        for file in Tutorials/Day_1/*ipynb; do echo file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_1/*ipynb; do echo $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
         for file in Tutorials/Day_1/*py; do echo $file; python $file; done
 
   Day2:
@@ -42,9 +42,10 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pandoc
-    - name: Execute and convert
+    - name: Convert and execute
       run: |
-        for file in Tutorials/Day_2/*ipynb; do jupyter nbconvert --to html $file --execute; done
+        for file in Tutorials/Day_2/*ipynb; do echo $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_2/*py; do echo $file; python $file; done
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
@@ -69,7 +70,7 @@ jobs:
         pip install pandoc
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_3/*ipynb; do echo file; jupyter nbconvert --to python $file ; done
+        for file in Tutorials/Day_3/*ipynb; do echo $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
         for file in Tutorials/Day_3/*py; do echo $file; python $file; done
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
