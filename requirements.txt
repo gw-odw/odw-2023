@@ -1,6 +1,7 @@
 astropy==5.2.2
 bilby==2.0.1
 corner==2.2.2
+dynesty==2.1.1
 gwosc==0.7.1
 gwpy==3.0.4
 h5py==3.8.0
