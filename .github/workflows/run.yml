@@ -62,5 +62,6 @@ jobs:
         pip install -r requirements.txt
     - name: Execute and convert
       run: |
-        for file in Tutorials/Day_3/*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        # Skipping 3.3 as it uses wget
+        for file in Tutorials/Day_3/Tuto_3.[1-2]*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
         for file in Tutorials/Day_3/*py; do echo "Running" $file; python $file; done
