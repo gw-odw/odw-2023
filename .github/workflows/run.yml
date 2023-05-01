@@ -1,0 +1,67 @@
+name: Run the code
+
+on:
+  push:
+    branches: "*"
+
+jobs:
+  Day1:
+    name: Day 1 Tutorials
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - name: Convert and execute
+      run: |
+        for file in Tutorials/Day_1/*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_1/*py; do echo "Running" $file; python $file; done
+
+  Day2:
+    name: Day 2 Tutorials
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - name: Convert and execute
+      run: |
+        for file in Tutorials/Day_2/*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_2/*py; do echo "Running" $file; python $file; done
+
+  Day3:
+    name: Day 3 Tutorials
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - name: Execute and convert
+      run: |
+        # Skipping 3.3 as it uses wget
+        for file in Tutorials/Day_3/Tuto_3.[1-2]*ipynb; do echo "Converting" $file; jupyter nbconvert --to python  --RegexRemovePreprocessor.patterns="^%" $file ; done
+        for file in Tutorials/Day_3/*py; do echo "Running" $file; python $file; done
