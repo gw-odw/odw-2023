@@ -7,10 +7,19 @@ import glob
 
 
 env_file = "environment.yml"
+requirements_file = "requirements.txt"
 
-# Read in the environemtn yaml file
+# Read in the environment yaml file
 with open(env_file) as f:
     environment = yaml.load(f, Loader=SafeLoader)
+
+# Read in the requirements file
+requirements = {}
+with open(requirements_file) as f:
+    for line in f:
+        module, version = line.split("==")
+        requirements[module] = version.rstrip("\n")
+
 
 # Extract the dependencies and versions
 dependencies = {}
@@ -19,7 +28,14 @@ for element in environment["dependencies"]:
     dependencies[module] = version
 
 
-files = glob.glob("Tutorials/*/*ipynb")
+# Check requirements and dependencies match
+# Note requirements.txt is a subset of the full environment.yml
+for module, version in requirements.items():
+    if version != dependencies[module]:
+        raise ValueError("Mismatch in versions between environment.yml and requirements.txt")
+
+
+files = glob.glob("Tutorials/Day_*/*ipynb")
 errors = []
 for fname in files:
     print(f"Checking {fname}")
