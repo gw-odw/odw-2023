@@ -1,0 +1,26 @@
+name: Version check
+
+on:
+  push:
+    branches: "*"
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        python -m pip install -U pip
+        python -m pip install -U jupyter
+    - name: Clean all notebooks
+      run: |
+        for file in Tutorials/Day_*/*ipynb; do echo $file; jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $file; done
+    - name: Check versions
+      run: |
+        python tests/check_versions.py
