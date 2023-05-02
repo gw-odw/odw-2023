@@ -109,6 +109,5 @@ If you are not familiar with Jupyter notebooks, google one of the many introduct
 
 <img src='https://www.wispresort.com/uploadedImages/Winter/hard.png' width=20 /> Advanced (For Windows 10)
 
-Install a Linux distribution on your Windows system. 
-See instructions over [here](https://ask.igwn.org/t/run-the-workshops-under-windows-with-wsl/84).
+If you are using Windows and would like to run the notebooks directly, install [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install). There are additional instructions [here](https://ask.igwn.org/t/run-the-workshops-under-windows-with-wsl/84) for getting started with the notebooks.
 Please indicate to us any problem or misunderstanding that you meet when following these steps. You can make comment directly on [ask.igwn.org](https://ask.igwn.org/)
