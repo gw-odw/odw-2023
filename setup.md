@@ -81,11 +81,11 @@ This guide will walk you through the configuration of this environment with [Con
    
 5. Clone the workshop git repo 
 
-    `git clone https://github.com/gw-odw/odw-2022.git`
+    `git clone https://github.com/gw-odw/odw-2023.git`
 
 6. Move into the directory with the workshop git repo 
 
-    `cd odw-2022`
+    `cd odw-2023`
     
 7. Activate the environment. <br/>
 
