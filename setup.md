@@ -52,11 +52,7 @@ This will build a Docker image (if not already present) with the dependency file
 
 <img src='./share/video-icon.png' width=18 /> [Video instructions](https://drive.google.com/file/d/1YZcaY-35JiHXOH4unRe5ECSeDl8IZFZy/view?usp=sharing)
 
-This workshop uses [Python version 3.9](https://www.python.org/downloads/release/python-390/). We recommend creating a [Python virtual environment](https://docs.python.org/3.9/tutorial/venv.html) and install all the package dependencies there. The official environment with all the required packages is [igwn-py39](https://computing.docs.ligo.org/conda/environments/igwn-py39/), available from the International Gravitational-Wave Observatory Network ([IGWN](https://computing.docs.ligo.org/guide/)) community website. 
-
-This guide will walk you through the configuration of this environment with [Conda](https://www.anaconda.com/). 
-
-1. Install miniconda:
+The first step is to Install miniconda:
    
     - Visit the website https://conda.io/en/latest/miniconda.html
     - Choose the version for Python 3.9
@@ -67,31 +63,63 @@ This guide will walk you through the configuration of this environment with [Con
     
    You may need to restart your computer after installation.
 
-2. To install the full [igwn-py39 environment](https://computing.docs.ligo.org/conda/environments/igwn-py39/) (recommended), download the YML dependencies file for the IGWN website:
+
+### Option 3a (Preferred): Light installation of igwn-py39
+
+We provide an environment file with a light installation of igwn-py39. We recommend to install this environment since it will take a small time and it will contain all you need to run the tutorials.
+
+1. Clone the workshop git repo 
+
+    `git clone https://github.com/gw-odw/odw-2023.git`
+
+2. Move into the directory with the workshop git repo 
+
+    `cd odw-2023`
+    
+3. Create the environment. <br/>
+   
+   `conda env create --file environment.yml`
+
+4. Activate the environment. <br/>
+
+   `conda activate igwn-py39-lw`
+
+5. Lunch Jupyter-Notebook with 
+
+   `jupyter-notebook`
+
+### Option 3b: Full installation of igwn-py39
+
+This workshop uses [Python version 3.9](https://www.python.org/downloads/release/python-390/). We recommend creating a [Python virtual environment](https://docs.python.org/3.9/tutorial/venv.html) and install all the package dependencies there. The official environment with all the required packages is [igwn-py39](https://computing.docs.ligo.org/conda/environments/igwn-py39/), available from the International Gravitational-Wave Observatory Network ([IGWN](https://computing.docs.ligo.org/guide/)) community website. 
+
+This guide will walk you through the configuration of this environment with [Conda](https://www.anaconda.com/). 
+
+
+1. To install the full [igwn-py39 environment](https://computing.docs.ligo.org/conda/environments/igwn-py39/) (recommended), download the YML dependencies file for the IGWN website:
    * [YML file for Linux](https://computing.docs.ligo.org/conda/environments/linux/igwn-py39.yaml)
    * [YML file for macOS](https://computing.docs.ligo.org/conda/environments/osx/igwn-py39.yaml)
 
-3. Add the conda-forge channel
+2. Add the conda-forge channel
 
     `conda config --add channels conda-forge`
 
-4. Create the environment. <br/>
+3. Create the environment. <br/>
    
-   `conda env create --file igwn-py39.yaml`
+   `conda env create --file gwn-py39.yaml`
    
-5. Clone the workshop git repo 
+4. Clone the workshop git repo 
 
-    `git clone https://github.com/gw-odw/odw-2022.git`
+    `git clone https://github.com/gw-odw/odw-2023.git`
 
-6. Move into the directory with the workshop git repo 
+5. Move into the directory with the workshop git repo 
 
-    `cd odw-2022`
+    `cd odw-2023`
     
-7. Activate the environment. <br/>
+6. Activate the environment. <br/>
 
    `conda activate igwn-py39`
    
-8. Build a custom [jupyter kernel](https://ipython.readthedocs.io/en/stable/install/kernel_install.html) using the command 
+7. Build a custom [jupyter kernel](https://ipython.readthedocs.io/en/stable/install/kernel_install.html) using the command 
 
   `python -m ipykernel install --user --name igwn-py39 --display-name "Python (igwn-py39)"`
   
@@ -99,7 +127,7 @@ This guide will walk you through the configuration of this environment with [Con
 Run `jupyter notebook --generate-config` to generate the file ~/.jupyter/jupyter_notebook_config.py, and in this file change the following line:
 **#c.NotebookApp.use_redirect_file = True** to **#c.NotebookApp.use_redirect_file = False**
 
-9. Start the Jupyter notebook server <br/>
+8. Start the Jupyter notebook server <br/>
   `jupyter notebook` and select the kernel `igwn-py39` if this is not done by default.
 
 **Notebooks:**
