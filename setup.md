@@ -105,9 +105,9 @@ Run `jupyter notebook --generate-config` to generate the file ~/.jupyter/jupyter
 **Notebooks:**
 If you are not familiar with Jupyter notebooks, google one of the many introductory guides available on the internet, like <a href="https://realpython.com/jupyter-notebook-introduction/">this one</a>. Also, taking a look at the <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Examples</a> offered by Google Colab can be helpful.
 
-## Option 4: Linux install on Windows 10 with dedicated app (Windows 10 only)
+## Option 4: Linux install on Windows with dedicated app (Windows 10 or 11)
 
-<img src='https://www.wispresort.com/uploadedImages/Winter/hard.png' width=20 /> Advanced (For Windows 10)
+<img src='https://www.wispresort.com/uploadedImages/Winter/hard.png' width=20 /> Advanced (For Windows 10 or 11)
 
 If you are using Windows and would like to run the notebooks directly, install [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install). There are additional instructions [here](https://ask.igwn.org/t/run-the-workshops-under-windows-with-wsl/84) for getting started with the notebooks.
 Note that even if Conda works many packages needed for the Tutorials are not running on Windows at all, so we suggest to follow one of the previous options and not to run the Tutorials directly on Windows.
