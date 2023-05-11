@@ -123,3 +123,13 @@ gwpy_strain = TimeSeries.read('challenge3.gwf', channel="H1:CHALLENGE3")
 from pycbc import frame
 pycbc_strain = frame.read_frame('challenge3.gwf', 'H1:CHALLENGE3')
 ```
+
+# Solutions
+
+To extract the solutions simply run
+
+```
+gpg -d solutions.tar.gz.gpg | tar -xvzf -
+```
+
+and use the password provided by the mentors. Two notebooks containing the solutions of all the 4 challenges will be extracted. Please, remember to download the `*.gwf` files needed for the challenges.
