@@ -85,10 +85,12 @@ This guide will walk you through the configuration of these environments with [C
    * Full igwn-py39 environment: `conda env create --file gwn-py39.yaml`
    * Light-weight environment: `conda env create --file environment.yml`
 
+
 5. Activate the environment. <br/>
 
    * Full igwn-py39 environment: `conda activate igwn-py39`
    * Light-weight environment: `conda activate igwn-py39-lw`
+
 
 6. Clone the workshop git repo 
 
