@@ -52,24 +52,29 @@ This will build a Docker image (if not already present) with the dependency file
 
 <img src='./share/video-icon.png' width=18 /> [Video instructions](https://drive.google.com/file/d/1YZcaY-35JiHXOH4unRe5ECSeDl8IZFZy/view?usp=sharing)
 
-This workshop uses [Python version 3.9](https://www.python.org/downloads/release/python-390/). We recommend creating a [Python virtual environment](https://docs.python.org/3.9/tutorial/venv.html) and install all the package dependencies there. The official environment with all the required packages is [igwn-py39](https://computing.docs.ligo.org/conda/environments/igwn-py39/), available from the International Gravitational-Wave Observatory Network ([IGWN](https://computing.docs.ligo.org/guide/)) community website. 
+This workshop uses [Python version 3.9](https://www.python.org/downloads/release/python-390/). We recommend creating a [Python virtual environment](https://docs.python.org/3.9/tutorial/venv.html) and install all the package dependencies there. The official environment with all the required packages is [igwn-py39](https://computing.docs.ligo.org/conda/environments/igwn-py39/), available from the International Gravitational-Wave Observatory Network ([IGWN](https://computing.docs.ligo.org/guide/)) community website. However, this environment can take about 4 Gb of space in your local pc so we provide also a *light-weight* version of this environment, with only the strictly necessary packages to execute the notebooks reducing to about 1 Gb the space needed and reducing also the time needed for installation. 
 
-This guide will walk you through the configuration of this environment with [Conda](https://www.anaconda.com/). 
+This guide will walk you through the configuration of these environments with [Conda](https://www.anaconda.com/). 
 
 1. Install miniconda:
    
     - Visit the website https://conda.io/en/latest/miniconda.html
     - Choose the version for Python 3.9
-    - Follow the [installation instructions](https://conda.io/projects/conda/en/latest/user-guide/install/
-) for your operating system: 
+    - Follow the [installation instructions](https://conda.io/projects/conda/en/latest/user-guide/install/) for your operating system: 
         - [Linux](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
         - [macOS](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html)
     
    You may need to restart your computer after installation.
 
-2. To install the full [igwn-py39 environment](https://computing.docs.ligo.org/conda/environments/igwn-py39/) (recommended), download the YML dependencies file for the IGWN website:
+
+2. If you want to install the full [igwn-py39 environment](https://computing.docs.ligo.org/conda/environments/igwn-py39/), download the YML dependencies file for the IGWN website:
    * [YML file for Linux](https://computing.docs.ligo.org/conda/environments/linux/igwn-py39.yaml)
    * [YML file for macOS](https://computing.docs.ligo.org/conda/environments/osx/igwn-py39.yaml)
+
+   Instead, for the *light-weight* environment, you can durectly use the YML file from this repository:
+   * [YAML in this repository](./environment.yml)
+
+   **Note:** the name of the *light-weight* environment is **igwn-py39-lw** to distinguish it from the official one, `igwn-py39`. In the following steps, remember to add the "`-lw`" subfix to the name.
 
 3. Add the conda-forge channel
 
@@ -77,33 +82,35 @@ This guide will walk you through the configuration of this environment with [Con
 
 4. Create the environment. <br/>
    
-   `conda env create --file igwn-py39.yaml`
-   
-5. Clone the workshop git repo 
+   * Full igwn-py39 environment: `conda env create --file gwn-py39.yaml`
+   * Light-weight environment: `conda env create --file environment.yml`
+
+
+5. Activate the environment. <br/>
+
+   * Full igwn-py39 environment: `conda activate igwn-py39`
+   * Light-weight environment: `conda activate igwn-py39-lw`
+
+
+6. Clone the workshop git repo 
 
     `git clone https://github.com/gw-odw/odw-2023.git`
 
-6. Move into the directory with the workshop git repo 
+7. Move into the directory with the workshop git repo 
 
     `cd odw-2023`
-    
-7. Activate the environment. <br/>
 
-   `conda activate igwn-py39`
-   
 8. Build a custom [jupyter kernel](https://ipython.readthedocs.io/en/stable/install/kernel_install.html) using the command 
 
-  `python -m ipykernel install --user --name igwn-py39 --display-name "Python (igwn-py39)"`
-  
-- For Windows users working with WSL, a change is needed to access the notebook.
-Run `jupyter notebook --generate-config` to generate the file ~/.jupyter/jupyter_notebook_config.py, and in this file change the following line:
-**#c.NotebookApp.use_redirect_file = True** to **#c.NotebookApp.use_redirect_file = False**
+   * Full igwn-py39 environment:`python -m ipykernel install --user --name igwn-py39 --display-name "Python (igwn-py39)"` 
+   * Light-weight environment: `python -m ipykernel install --user --name igwn-py39-lw --display-name "Python (igwn-py39-lw)"` 
 
 9. Start the Jupyter notebook server <br/>
-  `jupyter notebook` and select the kernel `igwn-py39` if this is not done by default.
+  `jupyter notebook` and select the kernel `igwn-py39` (or `igwn-py39-lw`) if this is not done by default.
 
 **Notebooks:**
 If you are not familiar with Jupyter notebooks, google one of the many introductory guides available on the internet, like <a href="https://realpython.com/jupyter-notebook-introduction/">this one</a>. Also, taking a look at the <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Examples</a> offered by Google Colab can be helpful.
+
 
 ## Option 4: Linux install on Windows with dedicated app (Windows 10 or 11)
 
