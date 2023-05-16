@@ -2,7 +2,7 @@
 
 ### GW Open Data Workshop #6
 
-Challenge activity for the Open Data Workshop 2022: https://gwosc.org/odw/odw2023/
+Challenge activity for the Open Data Workshop 2023: https://gwosc.org/odw/odw2023/
 
 Data files may be downloaded from [DCC G2300818](https://dcc.ligo.org/LIGO-G2300818/public) using these links:
 
