@@ -113,7 +113,7 @@ To load data in google co-lab.  Run this code, and then 'restart runtime', and r
 # -- Click "restart runtime" in the runtime menu
 
 # -- download data
-! wget https://www.gw-openscience.org/s/workshop3/challenge/challenge3.gwf
+! wget https://dcc.ligo.org/public/0187/G2300818/001/challenge3.gwf
 
 # -- for gwpy 
 from gwpy.timeseries import TimeSeries
