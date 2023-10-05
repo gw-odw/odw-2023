@@ -3,7 +3,7 @@ bilby==2.0.1
 corner==2.2.2
 dynesty==2.1.1
 gwosc==0.7.1
-gwpy==3.0.4
+gwpy==3.0.5
 h5py==3.8.0
 jupyter==1.0.0
 lalsuite==7.11
