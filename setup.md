@@ -82,7 +82,7 @@ This guide will walk you through the configuration of these environments with [C
 
 4. Create the environment. <br/>
    
-   * Full igwn-py39 environment: `conda env create --file gwn-py39.yaml`
+   * Full igwn-py39 environment: `conda env create --file igwn-py39.yaml`
    * Light-weight environment: `conda env create --file environment.yml`
 
 
